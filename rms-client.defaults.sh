@@ -50,3 +50,33 @@ ca_cert=
 #       Warn once per detected subshell, but ignore its sub-subshells.
 #
 subshell_warning=once-per-subshell
+
+
+# Settings for the Basic IDP create-token service. Note that these must be
+# valid for putting into the JSON directly without escaping.
+#
+# While the string settings are put into double quotes, the array settings are
+# not, so they must include the double quotes in the value set here.
+#
+# Example: bidp_access_codes='"FK","UO"'
+# Note how the entire value is in single quotes, to escape the double quotes.
+
+# User ID of the currently effective user.
+bidp_user_id=
+
+# User ID of the real user, which can be different from the effective user.
+# If this is not set, it defaults to the effective user's ID.
+bidp_real_user_id=
+
+# Name of the currently effective user.
+bidp_name=
+
+# Roles that the currently effective user has access to.
+# This is an array, so to be valid each entry must be put in double quotes.
+bidp_roles=
+
+# Access codes that the currently effective user can read. Array, see above.
+bidp_access_codes=
+
+# Access codes that the currently effective user can grant. Array, see above.
+bidp_access_codes_grant=

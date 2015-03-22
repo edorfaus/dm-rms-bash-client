@@ -25,6 +25,8 @@ for file in "${_RMS[lib_dir]}"/rms/* ; do
 	source "$file"
 done
 
+source "${_RMS[lib_dir]}/idp/bidp_create_token.sh"
+
 rms_config clear
 rms_token clear
 
