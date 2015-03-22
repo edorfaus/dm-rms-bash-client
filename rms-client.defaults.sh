@@ -80,3 +80,17 @@ bidp_access_codes=
 
 # Access codes that the currently effective user can grant. Array, see above.
 bidp_access_codes_grant=
+
+
+# Settings for the Login IDP login service.
+
+# The base URL to the Login IDP server you want the client to talk to.
+lidp_server=
+
+# The username to use for logging in to the IDP.
+lidp_username=
+
+# The password to use for logging in to the IDP.
+# If this is left blank, then cURL will ask for the password on each request.
+# We recommend leaving this blank, for security reasons.
+lidp_password=
