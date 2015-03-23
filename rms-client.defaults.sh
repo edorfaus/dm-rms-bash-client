@@ -52,6 +52,27 @@ ca_cert=
 subshell_warning=once-per-subshell
 
 
+# The mode for automatic creation of bearer tokens.
+# Available modes:
+# - never   : never create a token automatically
+# - always  : always create a new token automatically
+# - empty   : create a token automatically if the token is empty or unset
+# - timeout : reuse the same token until a certain amount of time has passed
+# - check   : same as timeout, except that before creating a new token it
+#             checks if the old one is still valid by using rms_check_token
+# The default mode is check.
+token_auto_mode=check
+
+# The function to call when we need to auto-create a new bearer token.
+# You can use rms_lidp_login or rms_bidp_create_token, or provide your own.
+# The default function is rms_lidp_login.
+token_auto_create_func=rms_lidp_login
+
+# The timeout for reusing the same bearer token, if mode is timeout or check.
+# This is in seconds, the default value is 30.
+token_timeout=30
+
+
 # Settings for the Basic IDP create-token service. Note that these must be
 # valid for putting into the JSON directly without escaping.
 #

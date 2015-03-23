@@ -90,7 +90,11 @@ _rms_curl() {
 	fi
 
 	if [ $token_was_set -eq 0 ]; then
-		#TODO: auto-create a token?
+		if ! rms_token auto-create ; then
+			echo "Error: Failed to auto-create a token." >&2
+			return 1
+		fi
+
 		rms_token put token
 
 		if [ "$token" = "" ]; then
