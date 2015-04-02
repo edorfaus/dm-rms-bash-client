@@ -16,6 +16,7 @@ _RMS[lib_dir]="$(dirname "$BASH_SOURCE")"
 _RMS[lib_dir]="$(cd "${_RMS[lib_dir]}" ; pwd)"
 
 source "${_RMS[lib_dir]}/core/config.sh"
+source "${_RMS[lib_dir]}/core/subshell_warning.sh"
 source "${_RMS[lib_dir]}/core/output.sh"
 source "${_RMS[lib_dir]}/core/token.sh"
 source "${_RMS[lib_dir]}/core/curl.sh"

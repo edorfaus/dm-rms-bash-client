@@ -24,3 +24,29 @@ client_cert_password=
 # If this is set to "*" then the server certificate is not checked.
 # If this is left blank, then the default certificate bundle is used.
 ca_cert=
+
+
+# Subshell warning frequency mode.
+#
+# Being called in a subshell means that changes to the various variables that
+# are used by the client will not be persistent - the values will be reset as
+# soon as the subshell exits. This is generally not what our users want, yet it
+# is easy to cause subshells inadvertently or without knowing it is a problem.
+#
+# Therefore, various functions in the client detect this and warn about it.
+#
+# However, since it is possible that the user knows exactly what they're doing,
+# and has a good reason to use a subshell anyway despite these problems, this
+# setting allows for adjustment of how often these warnings are printed.
+#
+# Known values:
+# - always
+#       Always warn about use of subshells whenever it is detected.
+# - never
+#       Never warn about use of subshells, even when it is detected.
+# - once-per-subshell
+#       Warn once per detected subshell or sub-subshell. (Default)
+# - once-per-subshell-and-below
+#       Warn once per detected subshell, but ignore its sub-subshells.
+#
+subshell_warning=once-per-subshell

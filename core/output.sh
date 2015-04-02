@@ -32,6 +32,7 @@ rms_output() {
 		fi
 		return $?
 	fi
+	_rms_subshell_warning
 	case "$1" in
 		clear) unset _RMS_output[output] ;;
 		mode)

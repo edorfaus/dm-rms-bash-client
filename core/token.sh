@@ -3,8 +3,8 @@
 #
 rms_token() {
 	case "$1" in
-		clear) unset _RMS_token ;;
-		set) _RMS_token="$2" ;;
+		clear) _rms_subshell_warning ; unset _RMS_token ;;
+		set) _rms_subshell_warning ; _RMS_token="$2" ;;
 		get) echo -n "$_RMS_token" ;;
 		put)
 			if ! [[ "$2" =~ ^[a-zA-Z_][a-zA-Z0-9_]*$ ]]; then

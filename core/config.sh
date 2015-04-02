@@ -11,6 +11,7 @@ declare -A _RMS_config
 _RMS_config=()
 
 rms_config() {
+	_rms_subshell_warning
 	case "$1" in
 		load)
 			shift
