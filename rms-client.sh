@@ -21,6 +21,10 @@ source "${_RMS[lib_dir]}/core/output.sh"
 source "${_RMS[lib_dir]}/core/token.sh"
 source "${_RMS[lib_dir]}/core/curl.sh"
 
+for file in "${_RMS[lib_dir]}"/rms/* ; do
+	source "$file"
+done
+
 rms_config clear
 rms_token clear
 
