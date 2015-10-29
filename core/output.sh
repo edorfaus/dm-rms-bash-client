@@ -6,7 +6,7 @@ declare -A _RMS_output
 _RMS_output=()
 
 rms_output() {
-	if [ $# -eq 0 -o "$1" = "is" -o "$1" = "put" ]; then
+	if [ $# -eq 0 -o "$1" = "is" -o "$1" = "put" -o "$1" = "pp" ]; then
 		if [ "${_RMS_output[mode]:-keep}" != "keep" ]; then
 			echo "Error: Output mode is not keep." >&2
 			return 1
@@ -21,6 +21,8 @@ rms_output() {
 			else
 				printf "%s" "${_RMS_output[output]}"
 			fi
+		elif [ "$1" = "pp" ]; then
+			json_pp <<<"${_RMS_output[output]}"
 		elif [ "$1" = "is" ]; then
 			[ "${_RMS_output[output]}" = "$2" ]
 			return $?
