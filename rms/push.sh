@@ -129,6 +129,9 @@ rms_push() {
 
 			_RMS_push_actions="$_RMS_push_actions$action"
 			;;
+		get-current-actions)
+			rms_output run printf "[%s\n]" "$_RMS_push_actions"
+			;;
 		_set_error)
 			shift
 
