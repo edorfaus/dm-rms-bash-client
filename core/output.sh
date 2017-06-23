@@ -41,8 +41,10 @@ rms_output() {
 			case "$2" in
 				keep) unset _RMS_output[mode] ;;
 				stdout) _RMS_output[mode]=stdout ;;
+				stdout-nl) _RMS_output[mode]=stdout-nl ;;
 				*)
 					echo "Error: Unknown output mode: $2" >&2
+					echo "Expected one of: keep stdout stdout-nl" >&2
 					return 1
 			esac
 			unset _RMS_output[output]
@@ -65,6 +67,11 @@ rms_output() {
 					;;
 				stdout)
 					"$@"
+					return $?
+					;;
+				stdout-nl)
+					"$@"
+					printf "\n"
 					return $?
 					;;
 				*)
